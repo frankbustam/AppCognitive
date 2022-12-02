@@ -1,0 +1,30 @@
+<h1>{{title}}</h1>
+    <p >
+        <div class="container">
+            <h1>Lista de Usuarios</h1>
+            {{#if usuarios }}
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Departamento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{# each usuarios }}
+                        <tr>
+                            <td><a href="/usuarios/show/{{ id }}">{{ id }}</a></td>
+                            <td>{{ nombre }}</td>
+                            <td>{{ apellido }}</td>
+                            <td>{{ departamento }}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            {{~^~}}
+                <div>Usuarios no encontrados.</div>
+            {{/if}}
+        </div>
+    </p>
